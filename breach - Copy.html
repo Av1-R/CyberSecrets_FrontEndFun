@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="breach.css" rel="stylesheet" />
+    <title>Coding Test 2</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+            $( document ).ready(function() {
+
+                /*https://www.videvo.net/video/harshly-lit-paths-on-a-circuit-board/5145/*/
+
+              
+                var clicked = 0;
+
+     
+    $("#breachInfo").eq(0).animate({
+        "margin-left":"+=-75%"  
+    }, 350)   
+    $("#leftArrow").css({"opacity":"0"})
+    $("#breachInfo p").html("1");
+
+    function type(msgArr){
+        var id = $("#typeWriter")[0];
+        var count = 0;
+        setTimeout(function(){
+            setInterval(function(){
+                if(count > msgArr.length-1){
+                    return;
+                }
+                id.append(msgArr[count]);
+                
+                count++;
+            
+            }, 30);
+        }, 100);   
+    }
+
+    function sliderBuilder(){
+        var slider0 = '<img src="images/equifax.jpg"\
+                    alt="Equifax Image"/>' + '<figcaption>Equifax</figcaption>'
+
+        var slider1 = '<img src="images/facebook.jpeg"\
+                    alt="Facebook Image"/>' + '<figcaption>Facebook</figcaption>'    
+        
+        var slider2 = '<img src="images/firstamericanfinancial.jpg"\
+                    alt="First American Financial Image"/>' + '<figcaption>First American Financial</figcaption>'  
+
+        var slider3 = '<img src="images/yahoo.jpeg"\
+                    alt="Yahoo image"/>' + '<figcaption>Yahoo</figcaption>'     
+
+        if(clicked == 0){
+            $("#breachInfo p").html("nibba");
+                    $("figure.imgHolder").eq(0).animate({
+                        "margin-left":"+=-200%"                        
+                    }, 350, function(){
+                        $("figure.imgHolder").eq(0).animate({
+                            "margin-left":"+=200%"                        
+                        }, 350, function(){   
+                    });
+                });
+        
+                $("figure.imgHolder").html(slider0);
+
+            }else if(clicked < 0){
+                clicked = 0;
+            }
+            else if(clicked == 1){ 
+                $("#breachInfo p").html(slider1Info);
+                $("figure.imgHolder").eq(0).animate({
+                    "margin-left":"+=-200%"                        
+                }, 350, function(){
+                    $("figure.imgHolder").eq(0).animate({
+                        "margin-left":"+=200%"                        
+                    }, 350, function(){
+                });
+            });
+            $("figure.imgHolder").html(slider1);
+            }
+            else if(clicked == 2){
+                $("figure.imgHolder").eq(0).animate({
+                    "margin-left":"+=-200%"                        
+                }, 350, function(){
+                    $("figure.imgHolder").eq(0).animate({
+                        "margin-left":"+=200%"                        
+                    }, 350, function(){
+                });
+            });
+            $("figure.imgHolder").html(slider2);
+            }
+            else if(clicked == 3){
+                $("figure.imgHolder").eq(0).animate({
+                    "margin-left":"+=-200%"                        
+                }, 350, function(){
+                    $("figure.imgHolder").eq(0).animate({
+                        "margin-left":"+=200%"                        
+                    }, 350, function(){
+                });
+            });
+            $("figure.imgHolder").html(slider3);
+            }else if (clicked > 3){
+                clicked = 3;
+            }
+
+    }
+
+
+    
+    $("#leftArrow").click( function(){
+            clicked--;
+            if(clicked == 0){
+        $("#leftArrow").css({"opacity":"0"});}
+            sliderBuilder()
+           
+            console.log(clicked); 
+    })
+
+    $("#rightArrow").click( function(){
+       
+        $("#leftArrow").css({"opacity":"1"});
+
+    
+      clicked++;
+      sliderBuilder() 
+      console.log(clicked); 
+    })
+
+
+            
+
+
+
+          
+
+
+    $("figcaption").hide();	
+    
+    $(".imgHolder").mouseenter(function(){
+		$(this).find("figcaption").stop();
+		$(this).find("figcaption").slideDown(400);
+
+	});
+
+	$(".imgHolder").mouseleave(function(){
+		$(this).find("figcaption").stop();
+		$(this).find("figcaption").slideUp(400);
+	});
+
+                
+
+    $(".flexChild").eq(0).hover(function(){
+        $("#flexChildRight").html("1");
+    });
+    $(".flexChild").eq(1).hover(function(){
+        $("#flexChildRight").html("2");
+    });
+    $(".flexChild").eq(2).hover(function(){
+        $("#flexChildRight").html("3");
+    });
+
+    type("As of 2019, one of Australia's most prestigious univserity's, the ANU (Australian National University) had its network deeply infilrated...\
+        Due to the complexity and sheer manhours invested into breach, experts suspect that it was an act of state sponsored cyber warfare.\
+        The following information is all directly from the incident response report published after the hacking.\
+         The infiltrators are still at large... We know nothing.");
+
+ 
+    
+    //bg video https://www.videvo.net/video/ethernet-cables/440/ 
+});
+</script>
+</head>
+<body>
+    <div id="vidContainer">
+            <video id="bgVid" autoplay muted loop>
+                    <source src="videos/databreachbg.mov" type="video/mp4">
+            </video>
+
+    </div>
+
+
+    <div class="navbar">
+        <a class="navli" href="index.html">Cyber Security Contextualised</a>
+        <a class="navli" href="impact.html">Impact of Cybercrime</a>
+        <a class="navli" href="hack.html">Anatomy of a Hack</a>
+        <a class="navli" href="breach.html">Data Breaches</a>
+        <a class="navli" href="protect.html">Protect Yourself</a>
+    </div>
+
+    <div id="sliders">
+        <img id="leftArrow" src="images/arrowLeft.png">
+        <img id="rightArrow" src="images/arrow.png">
+    </div>
+
+    <div id="banner">
+            <div class="flexBanner">
+                <figure class="imgHolder">
+                        <img src="images/equifax.jpg" alt="Batman" />
+                        <figcaption>Equifax</figcaption>
+                </figure>
+                   <!-- <figure class="imgHolder" id="robin">
+                        <img src="images/facebook.jpeg" alt="Robin" />
+                        <figcaption>Facebook</figcaption>
+                </figure>
+                    <figure class="imgHolder" id="superman">
+                        <img src="images/firstamericanfinancial.jpg" alt="Superman" />
+                        <figcaption>First American Financial</figcaption>
+                </figure>
+                    <figure class="imgHolder" id="wonderwoman">
+                        <img src="images/yahoo.jpeg" alt="Wonderwoman" />
+                        <figcaption>Yahoo</figcaption>
+                </figure>-->
+        </div>
+    </div>
+        
+
+
+     
+
+     
+            <div id="shadow">
+                    <div id="breachInfo">
+                            <p>info</p>
+                    </div>   
+            </div>
+
+        
+        
+    
+</body>
+</html>

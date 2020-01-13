@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="styles.css" rel="stylesheet" />
+<link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+<title>Cyber Secrets</title>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        
+        $("section#nextPage").hide();
+
+        //Typewriter function. Writes passed message array to passed element.
+        function type(msgArr, element){
+            var id = $(element)[0];
+            var count = 0;
+            setTimeout(function(){
+                setInterval(function(){
+                    if(count > msgArr.length-1){
+                        return;
+                    }
+                    id.append(msgArr[count]);
+                    count++;
+                    $("#nextPage").fadeIn(3000);
+                }, 150);
+            }, 3800);   
+        }
+
+        //Crude function for blinking effect on specific elements
+        function flick(){
+            var count = 0;
+                setInterval(function(){
+                if(count > 2){
+                    $('section#loading > p').fadeOut(900);
+                    $('section#loading > p').html("Completed").fadeIn(900);
+                    $('div.loader').hide();               
+                    return;
+                }
+                count++;
+                $('section#loading > p').fadeOut(600);
+                $('section#loading > p').fadeIn(600);
+                $('section#loading > p').fadeOut(600);
+            }, 1000);
+        }
+
+        flick();
+        type("They know your secrets", "#typing > p");   
+
+    });
+
+</script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navli" href="index.html">C Y B E R - S E C U R I T Y</a>
+        <a class="navli" href="impact.html">I M P A C T</a>
+        <a class="navli" href="hack.html">H A C K I N G</a>
+        <a class="navli" href="breach.html">B R E A C H E S</a>
+        <a class="navli" href="protect.html">D E F E N C E</a>
+    </nav>  
+	<main class="content">
+        <section class="vidContainer">
+            <video id="bgVid" autoplay muted loop alt="green scrolling code">
+                <source src="videos/dbbg3.mov" type="video/mp4">
+            </video>
+        </section>
+		<section id="vidCaption">
+            <p id="typeWriter"></p>
+        </section>
+        <section id="loading">
+            <div class="loader"></div> 
+            <p>Initializing scan</p>
+        </section>
+        <section id="typing">
+            <p></p>
+        </section>
+        <section id="nextPage">
+                <p>We are currently in the age of information, everything relies upon
+                     IT infrastructure and almost none of it is fully secure. Hacking and breaches are routine...</p><p>How secure are your secrets?</p>
+                <pre>     
+
+        ____________________________
+        !\_________________________/!\
+        !!                         !! \
+        !!           _____         !!  \
+        !!          |     |        !!  !
+        !!         | () ()|        !!  !
+        !!         \  ^  /         !!  !
+        !!          |||||          !!  !
+         !!           |||||         !!  !  
+        !!                         !!  !
+        !!                         !!  !
+        !!                         !!  !
+        !!                         !!  /
+        !!_________________________!! /
+        !/_________________________\!/
+            __\_________________/__/!_
+            !_______________________!/
+        ________________________
+        /oooo  oooo  oooo  oooo /!
+        /ooooooooooooooooooooooo/ /
+        /ooooooooooooooooooooooo/ /
+      /_____________________/_/
+
+            </pre>
+            <button href="impact.html">
+                    <span><a href="impact.html">learn more</a></span>
+            </button>
+        </section>
+    </main>
+</body>
+</html>
+

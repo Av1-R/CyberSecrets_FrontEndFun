@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="impact.css" rel="stylesheet" />
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <title>Global Impact</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+            $( document ).ready(function() {
+
+                //48333 per second lost to cybercrime according to: https://www.riskiq.com/infographic/evil-internet-minute-2019/
+                $("section.flexChild .cost").hide();
+                $("section.globalCost p").hide();
+                $("section.globalCost .costLeft").hide();
+
+                $("section.flexChild").eq(0).animate({
+                    "margin-left":"+=-120%"                        
+                }, 350, function(){});
+                
+                $("section.flexChild").eq(1).animate({
+                    "margin-left":"+=-120%"                      
+                }, 550, function(){});
+                
+                $("section.flexChild").eq(2).animate({
+                    "margin-left":"+=-120%"                     
+                }, 750, function(){});
+
+                $("section.flexChild").eq(3).animate({
+                    "margin-left":"+=-120%"                     
+                }, 950, function(){
+                    $("section.flexChild .cost").fadeIn("slow");
+                    $("section.globalCost p").fadeIn("slow");
+                    $("section.globalCost div.costLeft").fadeIn("slow");
+                });
+
+                //Function simply increments from zero based on a passed value, output can be specified by second parameter. 
+                function costOfCyberCrime(costPerSec, element){
+                    var cost = 0;
+                    setInterval(function(){
+                        cost = cost + costPerSec;
+                        $(element).html("= $" + cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    }, 1000);
+                    console.log(cost);
+                }
+                //Copy of above function without $___,___,___ formatting.
+                function recordsPerMin(costPerSec, element){
+                    var cost = 0;
+                    setInterval(function(){
+                        cost = cost + costPerSec;
+                        $(element).html("= " + cost);
+                    }, 1000);
+                    console.log(cost);
+                }
+                //Copy of costOfCyber() function without "=" formatting.
+                function globalCost(costPerSec, element){
+                    var cost = 0;
+                    setInterval(function(){
+                        cost = cost + costPerSec;
+                        $(element).html("$" + cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    }, 1000);
+                    console.log(cost);
+                }
+                globalCost(48333, "section.globalCost .costLeft");
+                costOfCyberCrime(295, "section.flexChild:nth-child(2) .cost");
+                costOfCyberCrime(369.73, "section.flexChild:nth-child(3) .cost");
+                recordsPerMin(135, "section.flexChild:nth-child(4) .cost");
+            });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navli" href="index.html">C Y B E R - S E C U R I T Y</a>
+        <a class="navli" href="impact.html">I M P A C T</a>
+        <a class="navli" href="hack.html">H A C K I N G</a>
+        <a class="navli" href="breach.html">B R E A C H E S</a>
+        <a class="navli" href="protect.html">D E F E N C E</a>
+    </nav>  
+    <main>
+        <video id="bgVid" autoplay muted loop>
+            <source src="videos/globeRotate.mov" type="video/mp4" alt="background is a video of a rotating green glowing globe">
+        </video>
+        <section id="flexContainer">
+            <section class="flexbox">
+                <section class="globalCost">
+                    <div class="costLeft"></div>
+                    <p>Total Impact</p>
+                    <p>~$48,333 per second</p>
+                </section>
+            </section>
+            <section class="flexbox">
+                <section class="flexChild">The Global Economic Impact
+                    <p>A measure of global impact since you have visited this page. Source: <a href="https://www.riskiq.com/infographic/evil-internet-minute-2019/">RISKIQ's researchers</a></p>
+                </section>
+                <section class="flexChild">Losses from phishing:
+                    <p>~$295 per second</p>
+                    <div class="cost"></div>
+                    
+                </section>
+                <section class="flexChild">Global Losses from predicted ransomware events in 2019:
+                    <p>~$370 per second</p>
+                    <div class="cost"></div>
+                </section>
+                <section class="flexChild">Records compromised per minute:
+                        <p>~370 records per second</p>
+                    <div class="cost"></div>
+                </section>
+            </section>
+        </section>
+    </main>      
+</body>
+</html>

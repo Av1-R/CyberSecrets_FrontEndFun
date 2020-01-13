@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="breach.css" rel="stylesheet" />
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <title>Cyber Secrets</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+            $( document ).ready(function() {
+                /* bg video https://www.videvo.net/video/ethernet-cables/440/ */
+                /*info source = https://www.cnbc.com/2019/07/30/five-of-the-biggest-data-breaches-ever.html*/    
+                          
+                var clicked = 0;
+
+                var slider0Info = "<p>Number of Compromised Records: 147 million</p><p>Year: 2017</p>\
+                        <p>Reason: Poor security</p><p>Background: Equifax is a credit monitoring company that deals with \
+                        sensitive financial data. Due to negligence, millions of people had their SSN (social security numbers) leaked. \
+                        Due to this, the breach is of great significance as SSNs are the ultimate tool for an identity thief.\
+                        Following the breach, the company agreed to a global \
+                        settlement with the <a href=\"https://www.ftc.gov/enforcement/cases-proceedings/refunds/equifax-data-breach-settlement\">\
+                        Federal Trade Commission</a>.  \
+                        The settlement includes $425 million to help\
+                        people affected by the data breach... However, this only works out to be about $3 per person affected. </p>"
+
+                var slider1Info = "<p>Number of Compromised Records: 540 million</p><p>Year: 2019</p>\
+                        <p>Reason: Poor security</p><p>Background: Despite being a tech giant, Facebook failed to provide basic cyber security\
+                        measures for over half a billion of their users. The leaked data included users’ passwords, \
+                        names, comments, and likes. The scope of this particular <a href=\"https://slate.com/technology/2019/03/facebook-password-privacy-plain-text-lite-security.html\">\
+                        privacy failure</a> from Facebook is tremendous. It was discovered that well over half a billion user records were sitting in plain sight,\
+                        accessible to anyone smart enough to go looking.</p>"   
+                
+                var slider2Info = "<p>Number of Compromised Records: 885 million</p><p>Year: 2019</p>\
+                        <p>Reason: Poor security</p><p>Background: Another breach at a massive financial institution. This one involved data related to real estate closings over the past 16 \
+                        years, including bank account numbers and statements, mortgage and tax records, Social Security\
+                        numbers, wire transaction receipts and drivers license images. The worst part about this breach is that a very well known\
+                        and easily dsicoverable vulnerability known as an \
+                        <a href=\"https://www.forbes.com/sites/ajdellinger/2019/05/26/understanding-the-first-american-financial-data-leak-how-did-it-happen-and-what-does-it-mean/#670ecce9567f\">\
+                        insecure direct object reference</a> (IDOR) was used to view the documents. </p>"
+
+                var slider3Info = "<p>Number of Compromised Records: 3 billion / 500 million</p><p>Year: 2013 / 2014</p>\
+                        <p>Reason: Black Hat Hacking</p><p>Background: Yahoo currently holds the record for largest breach. Names, birth dates, \
+                        phone numbers and passwords of users were leaked due to the use of terribly weak encryption algorithms.\
+                        Security questions and backup email addresses used to reset lost passwords were also among the information stolen. This is all incredibly valuable information \
+                        for someone trying to break into other accounts owned by the same user and particularly useful \
+                        to a hacker seeking to break into MANY computers around the world.\
+                        Security researcher Jay Kaplan commented, “My guess is that <a href=\"https://www.nytimes.com/2017/10/03/technology/yahoo-hack-3-billion-users.html\">\
+                        Yahoo was completely ‘owned’</a> across the board,”</p>"   
+
+                $("div#breachInfo p").hide()
+                $("div#breachInfo p").fadeIn(1500)          
+                $("div#breachInfo").eq(0).animate({
+                    "margin-left":"25%"  
+                }, "slow")      
+                $("img#leftArrow").css({"opacity":"0"})
+                $("div#breachInfo p").html(slider0Info);
+
+                function sliderBuilder(){
+                
+                    var slider0 = '<img src="images/equifax.jpg"\
+                                alt="Equifax Image"/>' + '<figcaption>Equifax</figcaption>'
+
+                    var slider1 = '<img src="images/facebook.jpeg"\
+                                alt="Facebook Image"/>' + '<figcaption>Facebook</figcaption>'    
+                    
+                    var slider2 = '<img src="images/firstamericanfinancial.jpg"\
+                                alt="First American Financial Image"/>' + '<figcaption>First American Financial</figcaption>'  
+
+                    var slider3 = '<img src="images/yahoo.jpeg"\
+                                alt="Yahoo image"/>' + '<figcaption>Yahoo</figcaption>'     
+
+                    if(clicked == 0){
+                        $("div#breachInfo p").html(slider0Info);
+                                $("figure.imgHolder").eq(0).animate({
+                                    "margin-left":"+=-160%"                        
+                                }, 350, function(){
+                                    $("figure.imgHolder").eq(0).animate({
+                                        "margin-left":"+=160%"                        
+                                    }, 350, function(){
+                                });
+                            });
+                            $("figure.imgHolder").html(slider0);
+                        }else if(clicked < 0){
+                            clicked = 0;
+                        }
+                        else if(clicked == 1){
+                            $("div#breachInfo p").html(slider1Info);
+                            $("figure.imgHolder").eq(0).animate({
+                                "margin-left":"+=-160%"                        
+                            }, 350, function(){
+                                $("figure.imgHolder").eq(0).animate({
+                                    "margin-left":"+=160%"                        
+                                }, 350, function(){
+                            });
+                        });
+                        $("figure.imgHolder").html(slider1);
+                        }
+                        else if(clicked == 2){
+                            $("img#rightArrow").css({"opacity":"1"})
+                            $("div#breachInfo p").html(slider2Info);
+                            $("figure.imgHolder").eq(0).animate({
+                                "margin-left":"+=-160%"
+                                                        
+                            }, 350, function(){
+                                $("figure.imgHolder").eq(0).animate({
+                                    "margin-left":"+=160%"                        
+                                }, 350, function(){
+                            });
+                        });
+                        $("figure.imgHolder").html(slider2);
+                        }
+                        else if(clicked == 3){
+                            $("img#rightArrow").css({"opacity":"0"})
+                            $("div#breachInfo p").html(slider3Info);
+                            $("figure.imgHolder").eq(0).animate({
+                                "margin-left":"+=-160%"                        
+                            }, 350, function(){
+                                $("figure.imgHolder").eq(0).animate({
+                                    "margin-left":"+=160%"                        
+                                }, 350, function(){
+                            });
+                        });
+                        $("figure.imgHolder").html(slider3);
+                        }else if (clicked > 3){
+                            clicked = 3;
+                        }
+                }
+                $("img#leftArrow").click( function(){
+                        clicked--;
+                        if(clicked == 0){
+                    $("#leftArrow").css({"opacity":"0"});}
+                        sliderBuilder()
+                })
+                $("img#rightArrow").click( function(){
+                    $("img#leftArrow").css({"opacity":"1"});
+                    clicked++;
+                    sliderBuilder() 
+                })
+                $("img#rightArrow").mouseenter( function(){
+                    $("img#rightArrow").animate({"margin-right":"1%"}, "slow").dequeue();
+                    console.log("triggered");
+                });
+                $("img#rightArrow").mouseleave( function(){
+                    $("img#rightArrow").animate({"margin-right":"0%"}, "slow").dequeue();
+                    console.log("triggered");
+                });
+                $("img#leftArrow").mouseenter( function(){
+                    $("#leftArrow").animate({"margin-left":"1%"}, "slow").dequeue();
+                    console.log("triggered");
+                });
+                $("img#leftArrow").mouseleave( function(){
+                    $("#leftArrow").animate({"margin-left":"0%"}, "slow").dequeue();
+                });
+                $("figure.imgHolder").mouseenter(function(){
+                    $(this).find("figcaption").stop();
+                    $(this).find("figcaption").slideDown(400);
+
+                });
+                $("figure.imgHolder").mouseleave(function(){
+                    $(this).find("figcaption").stop();
+                    $(this).find("figcaption").slideUp(400);
+                });
+            });
+</script>
+</head>
+<body>
+    <main>
+        <nav class="navbar">
+            <a class="navli" href="index.html">C Y B E R - S E C U R I T Y</a>
+            <a class="navli" href="impact.html">I M P A C T</a>
+            <a class="navli" href="hack.html">H A C K I N G</a>
+            <a class="navli" href="breach.html">B R E A C H E S</a>
+            <a class="navli" href="protect.html">D E F E N C E</a>
+        </nav>
+        <section id="vidContainer">
+            <video id="bgVid" autoplay muted loop>
+                    <source src="videos/databreachbg.mov" type="video/mp4">
+            </video>
+        </section>
+        <section id="sliders">
+            <img id="leftArrow" src="images/arrowLeft.png" alt="left button Slider">
+            <img id="rightArrow" src="images/arrow.png" alt="right button for slider">
+        </section>
+        <section id="banner">
+            <section class="flexBanner">
+                <figure class="imgHolder">
+                    <img src="images/equifax.jpg" alt="Picture of Equifax building" />
+                    <figcaption>Equifax</figcaption>
+                </figure>
+            </section>
+        </section>   
+        <section id="bottomInfo">
+                <div id="breachInfo">
+                        <p>info</p>
+                </div>   
+        </section>
+    </main>
+</body>
+</html>

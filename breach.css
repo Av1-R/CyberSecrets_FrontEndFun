@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+body{
+	background: black;
+	margin: 0; 
+	padding: 0;
+	font-family: 'Anonymous Pro', monospace;
+	overflow: hidden;
+}
+
+section#vidContainer{ 
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60%; 
+}
+
+video#bgVid{
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-40%);
+	opacity: 0.5;
+}
+
+nav.navbar {
+	z-index: 1000000000;
+	overflow: hidden;
+	position: fixed; 
+	top: 0; 
+	display: flex;
+	width: 100%;
+	height: 6%;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.65);
+	font-size: 20px;
+}
+
+nav.navbar a{
+	 text-decoration: none;
+	 color: white;
+}
+
+nav.navbar .navli {
+	float: left;
+	flex: 1;
+	text-align: center;
+	color: #f2f2f2;
+	padding: 1vw 1vw;
+	text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+	background:
+     linear-gradient(
+       to bottom, rgba(21, 255, 0, 0.788) 0%,
+       rgba(21, 255, 0, 0.788) 100%
+     );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    text-decoration: none;
+	transition: background-size .2s;
+	font-size: 20px;
+	font-size: 1vw;
+}
+
+nav.navbar .navli:nth-child(4) {
+	color: #0cee0c;
+	text-shadow: 2px 2px rgba(206,89,55,0);
+	font-size: 1vw;
+}
+  
+nav.navbar .navli:hover {
+	color: black;
+	text-shadow: 2px 2px rgba(206,89,55,0);
+	background-size: 4px 100px;
+	
+}
+
+section#sliders{
+	margin-top: 11vh;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	
+}
+
+section#sliders > img{
+	z-index: 100000000;
+	width: 20vh;
+	height: 20vh;
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+	  transform: translateX(0);
+	}
+	40% {
+	  transform: translateX(-5px);
+	}
+	60% {
+	  transform: translateX(-3px);
+	}
+}
+
+img#leftArrow{
+	border-radius: 60%;
+	animation: bounce 2s infinite;
+	transition: background .5s ease-in-out;
+}
+img#rightArrow{
+	border-radius: 60%;
+	animation: bounce 2s infinite;
+	transition: background .5s ease-in-out;
+}
+
+section#banner{
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	margin-top: 5%;
+	color: #0cee0c;
+	font-size: 18px;
+	background: rgba(0, 0, 0, 1);
+	width: 100%;
+	height: 45vh;
+}
+
+section.flexBanner{
+	margin-top: 0%;
+	height: 100%;
+	overflow-x: hidden;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+figure.imgHolder{
+	width: 70vh;
+	height:auto;
+	background-color: rgba(43, 255, 0, 0.1);
+	transition: background .5s ease-in-out;
+	position: relative;
+}
+
+figure.imgHolder figcaption {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	font-size: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+}
+
+figure.imgHolder img{
+	box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow-x: hidden;
+	width:100%;
+	height:100%;
+	transition: transform 0.2s linear;
+}
+
+section#bottomInfo{
+	font-size:1vw;
+	z-index: 10;
+	position: relative;
+	margin-top: 2.8%;
+	width: 100%;
+	height: 20vh;
+	color: white;
+}
+
+div#breachInfo{
+	padding: 1.5%;
+	background-color: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	width: 50%;
+	margin-left: 100%;
+	transition: linear;
+}
+
+div#breachInfo a{
+	color: #0cee0c;
+}
+
+
+
+
+
+
+  

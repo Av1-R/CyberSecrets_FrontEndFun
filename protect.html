@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <link href="protect.css" rel="stylesheet" />
+    <title>Coding Test 2</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+            $( document ).ready(function() {
+
+                $("section#header p").hide();
+                $("section#header p").fadeIn("slow");
+                //Acts as a typwriter for an input array 
+                function type(msgArr, element){
+                        var id = $(element)[0];
+                        var count = 0;
+                        setTimeout(function(){
+                            setInterval(function(){
+                                if(count > msgArr.length-1){
+                                    return;
+                                }
+                                id.append(msgArr[count]);
+                                count++;
+                            }, 50);
+                        }, 100);   
+                    }
+
+                type("Protect Yourself","#header h2");    
+
+                $(window).scroll(function(){
+                    var scrollTop = $(this).scrollTop()
+                    var winHeight1 = $(document).height()*0.06 
+                    var winHeight2 = $(document).height()*0.18
+                    var winHeight3 = $(document).height()*0.31
+                    var winHeight4 = $(document).height()*0.55
+                    var winHeight5 = $(document).height()*0.75
+                            
+                   if((scrollTop > winHeight1)){
+                        $("#txtWrap1").eq(0).animate({
+                            "margin-left":"25%", 
+                            "opacity":"1",                    
+                            }, 750, function(){
+                                type("YOU are a target.", "#txtWrap1 h2").stop();
+                            });   
+                        }
+                    if((scrollTop > winHeight2)){
+                        $("#txtWrap2").eq(0).animate({
+                            "margin-left":"25%", 
+                            "opacity":"1",                    
+                            }, 750, function(){
+                                type("Password management", "#txtWrap2 h2").stop();
+                            });   
+                        }
+
+                    if((scrollTop > winHeight3)){
+                        $("#txtWrap3").eq(0).animate({
+                            "margin-left":"25%", 
+                            "opacity":"1",                    
+                            }, 750, function(){
+                                type("Keep software up to date", "#txtWrap3 h2").stop();
+                            });   
+                        }
+
+                    if((scrollTop > winHeight4)){
+                        $("#txtWrap4").eq(0).animate({
+                            "margin-left":"25%", 
+                            "opacity":"1",                    
+                            }, 750, function(){
+                                type("Open Source Intel", "#txtWrap4 h2").stop();
+                            });   
+                        }
+                        if((scrollTop > winHeight5)){
+                        $("#txtWrap5").eq(0).animate({
+                            "margin-left":"25%", 
+                            "opacity":"1",                    
+                            }, 750, function(){
+                                type("Herd Immunity", "#txtWrap5 h2").stop();
+                            });   
+                        }
+                    });      
+            });
+    </script>
+
+<title>Document</title>
+</head>
+<body>
+    <main>
+        <nav class="navbar">
+            <nav class="navbar">
+                    <a class="navli" href="index.html">C Y B E R - S E C U R I T Y</a>
+                    <a class="navli" href="impact.html">I M P A C T</a>
+                    <a class="navli" href="hack.html">H A C K I N G</a>
+                    <a class="navli" href="breach.html">B R E A C H E S</a>
+                    <a class="navli" href="protect.html">D E F E N S E</a>
+            </nav>
+        </nav>
+        <section id="bg1">
+                <section id="header">
+                        <h2>_</h2>
+                        <p>In the age of information, computer and information literacy is relevant to everyone. Its time to learn about some best practices when online.</p>
+                </section>
+                
+        </section>
+        <section id="dArrow"><img id="arrowDown" src="images/arrowDown.png"></section>
+        <section id="bg2">
+                <section class="info">
+                        <div id="txtWrap1">
+                                <h2>&nbsp;</h2>
+                                <p>Realize that you are an attractive target to hackers... Everyone is equal in the eyes of a cyber criminal, it's their one redeeming quality! Stay vigilant, do not think "why would someone hack me?”.</p>
+                        </div>
+                    </section>
+        </section>
+        <section id="bg3">
+                <section class="info">
+                        <div id="txtWrap2">
+                                <h2>&nbsp;</h2>
+                                <p>There seems to be a misconception regarding passwords where people believe that 8 randomly mixed characters are the blueprint for password strength. In reality, when it comes to password strength, length is mathematically the most important factor. This may elicit a groan but do not fret! Just pick 3-4 completely random unrelated word, im sure that you will find that it is easier to remember "smallnarwhaltruckbanana" than "23efdsa_!". It is signicantly more secure too! Also remember not to share your password with others, write it down, or put it on a post-it note attached to your monitor.</p>
+                        </div>
+                    </section>
+        </section>
+        <section id="bg4">
+                <section class="info">
+                        <div id="txtWrap3">
+                                <h2>&nbsp;</h2>
+                                <p>Ensure ALL your software is up to date (not just your antivirus!). This is generally a very simple yet effective way to passively protect yourself from common exploits. This is because there are new security loopholes being discovered on software, networks and operating systems every single day. Companies are struggling to keep up but they do patch a lot of the holes, it is one of the reasons why everything now requires updates so often.</p>
+                        </div>
+                    </section>
+        </section>
+        <section id="bg5">
+                <section class="info">
+                        <div id="txtWrap4">
+                                <h2>&nbsp;</h2>
+                                <p>Do not blindly give out your personal information unless it is an absolute necessity. Sometimes a phone number and date of birth are all criminals need to steal your identity or to start privilege escalation for a larger scale hack. OSINT (Open Source Intelligence) is a fancy term hackers use when performing a reconnaissance on their victims publicly available information (such as on SOCIAL MEDIA). Do not make it easy for them...</p>
+                        </div>
+                    </section>
+        </section>
+      
+        <section class="info">
+                <div id="txtWrap5">
+                        <h2>&nbsp;</h2>
+                        <p>If everyone is educated on the topic and consistently follows <a href="http://info.opendns.com/rs/opendns/images/cyber-security-tip-sheet%20%281%29.pdf?_ga=2.198183593.748068882.1572952046-578259197.1572952046">computer security best practices</a>, every system would be more secure. This is simply due to the fact that people are generally the weakest point of any large system's security. If a company's employees are all securing themselves, they in turn are also securing the company. It is why phishing and USB drops are so often the initial method of entry hackers use to worm their way into a successful data breach.</p>
+                </div>
+        </section>
+    </main>
+</body>
+</html>

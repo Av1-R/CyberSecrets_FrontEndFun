@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+body{
+	background-color:black;
+	margin: 0;  
+	padding: 0;
+	font-family: 'Anonymous Pro', monospace;
+}
+
+nav.navbar {
+  z-index: 1000000000;
+	overflow: hidden;
+	position: fixed; 
+	top: 0; 
+	display: flex;
+	width: 100%;
+	height: 6%;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.8);
+	font-size: 20px;
+}
+
+nav.navbar a{
+	 text-decoration: none;
+	 color: white;
+}
+
+nav.navbar .navli {
+	float: left;
+	flex: 1;
+	text-align: center;
+	color: #f2f2f2;
+	padding: 1vw 1vw;
+	text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+	background:
+     linear-gradient(
+       to bottom, rgba(21, 255, 0, 0.788) 0%,
+       rgba(21, 255, 0, 0.788) 100%
+     );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    text-decoration: none;
+	transition: background-size .2s;
+	font-size: 1vw;
+}
+
+nav.navbar .navli:nth-child(2) {
+	color: #0cee0c;
+	text-shadow: 2px 2px rgba(206,89,55,0);
+	font-size: 1vw;
+}
+  
+nav.navbar .navli:hover {
+	color: black;
+	text-shadow: 2px 2px rgba(206,89,55,0);
+	background-size: 4px 100px;
+}
+
+video#bgVid {
+  position: fixed;
+  z-index: -1000;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.325;
+}
+
+section#flexContainer{
+	margin-top: 5%;
+	width:100%;
+	height:100vh;
+  display: flex;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1vw;
+  font-size: 1vw;
+}
+
+section.flexbox{
+  overflow-x: hidden;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1vh;
+}
+
+section.globalCost{	
+  position: fixed;
+  height: 20%;
+  width: 40%;
+  text-align: center;
+  margin-bottom: 7%;
+  margin-left: 7.7%;
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 80px;
+  font-size: 5vw;
+  color:white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+section.globalCost p{
+  color: #0cee0c;
+  font-size: 20px;
+  font-size: 1.5vw;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+section.globalCost p:nth-child(3){
+  color: white;
+  font-size: 20px;
+  font-size: 1vw;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+section.flexChild{
+  padding: 4%;
+	height: 15%;
+	width: 40%;
+  margin: 0 auto;
+  margin-left: 150%;
+  color: #0cee0c;
+  font-size: 20px;
+  font-size: 1vw;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  
+}
+
+section.flexChild:hover{
+  transition:  transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: translateX(-1em);
+  font-size: 1.1vw;
+}
+
+section.flexChild p{
+  color:white;
+
+}
+
+section.flexChild a{
+  color:  #0cee0c;
+}
+
+section.flexChild .cost{
+  color:white;
+  font-size: 1vw;
+}
+
+
+

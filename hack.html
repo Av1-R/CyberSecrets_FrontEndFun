@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="hack.css" rel="stylesheet" />
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <title>Cyber Secrets</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+            $( document ).ready(function() {
+
+                /*icons: https://www.flaticon.com/free-icon/message_263140 
+                https://www.flaticon.com/free-icon/radio-station_2226855#term=station&page=1&position=67
+                https://www.flaticon.com/free-icon/database_149208#term=database&page=1&position=8*/
+
+                $(window).scroll(function(){
+                    var scrollTop = $(this).scrollTop()
+                    var winHeight = $(document).height()*0.06
+                            
+                   if((scrollTop > winHeight)){
+
+                        $("section.flexChild").eq(0).animate({
+                            
+                            "margin-left":"+35%"                     
+                            }, 350);
+                            
+                            $("section.flexChild").eq(1).animate({
+                                "margin-left":"+35%"                     
+                            }, 750);
+                            
+                            $("section.flexChild").eq(2).animate({
+                                "margin-left":"+35%"                     
+                            }, 1150);
+
+                            $("section.flexChild").eq(3).animate({
+                                "margin-left":"+35%"                     
+                            }, 1550,);
+
+                        }
+                    });
+
+                    //Acts as a typwriter for an input array 
+                    function type(msgArr, element){
+                        var id = $(element)[0];
+                        var count = 0;
+                        setTimeout(function(){
+                            setInterval(function(){
+                                if(count > msgArr.length-1){
+                                    return;
+                                }
+                                id.append(msgArr[count]);
+                                count++;
+                            }, 25);
+                        }, 100);   
+                    }
+                
+                $(".flexChild").hover(function(){
+                    $("#flexChildRight").animate({
+                        "margin-left":"20%"                       
+                    }, 550, function(){});
+                    $("#flexChildRight").html("1<p>2</p>");
+                });
+                    
+                var hackInfo1 = "<h2>Targetted Spear Phishing</h2>" + "Remember the Nigerian prince scams from the early days of the internet? Spear phishing is very similiar\
+                 but significantly more targetted. Phishing attacks generally take the form of an email tailored to the victim's internet usage or workplace.\
+                 Unfortunately, no princes were offering their fortunes\
+                 in the emails sent to the staff members at the ANU. \
+                 The email was previewed by an employee who was a senior staff member, this allowed the criminals to copy \
+                 their username, password and calendar. The actual phishing email in question is pictured below: " + '<a href="images/index.jpg"><img src="images/index.jpg"></a>'
+
+                var hackInfo2 = "<h2>Creation of Attack Station</h2>" + "Hackers gained full control in a subdivision of the ANU computer network using the details stolen previously,\
+                 in the report this is referred to as \"attack station one\". Scruplously the hackers deleted server logs and any other potential evidence. This essentially covered \
+                 their tracks. They also used Tor (the onion router),\
+                 a software which uses encryption and a network of relays to provide anonyminity to its users, this\
+                 effectively disguised where they were operating from." + '<a href="https://www.torproject.org/"><img src="images/tor.png"></a>'
+
+                var hackInfo3 = "<h2>Network Mapped</h2>" + "Next the hackers started to build a map of the network so that they could begin traversing it for more valuable information.\
+                 Afterwards, the information on the network's structure was sent to external addresses via an old ANU mail server that didn’t need\
+                 an account or any login details to send messages. Pictured below is the logo to an infamous open source port scanning software (Network Mapper) that is used by both\
+                 ethical and malicious hackers alike. A similiar software could have been used to map out the university's computer network"
+                 + '<a href="https://nmap.org/"><img src="images/nmap.png"></a>'
+
+                hackInfo4 = "<h2>Data Stolen</h2>" + "Finally the hackers reached what they considered to be the motherload, the university’s enterprise systems domain (ESD).\
+                 It holds databases from all of the major departments in the university.\
+                 Within the ESD you can find student academic records, tax file numbers,\
+                 and personal details, including addresses and dates of birth. The investigation could not determine  \
+                 if the hackers targeted certain people. The ANU suspects up to 15 people were involved in the hack.\
+                 The cyber attack was so sophisticated it’s left the nation’s leading security experts shocked.\
+                 “The fact it took us six months to find that they had been here. We were pleased that we were even able to find them,” \
+                 Professor Schmidt of the ANU said." 
+                 + '<a href="https://www.smh.com.au/politics/federal/a-diamond-heist-anu-hack-a-sophisticated-targeted-operation-report-finds-20191002-p52wx0.html"><img src="images/anuVC.PNG"></a>'
+
+                $(".flexChild").eq(0).hover(function(){
+                    $("#flexChildRight").html(hackInfo1);
+
+                });
+                $(".flexChild").eq(1).hover(function(){
+                    $("#flexChildRight").html(hackInfo2);
+                });
+                $(".flexChild").eq(2).hover(function(){
+                    $("#flexChildRight").html(hackInfo3);
+                });
+                $(".flexChild").eq(3).hover(function(){
+                    $("#flexChildRight").html(hackInfo4);
+                });
+
+                type("As of 2019, the ANU (Australian National University), a prestigious uni had its network deeply infilrated\...\
+                    Due to the complexity and sheer manhours invested into breach, experts suspect that it was an act of state sponsored cyber warfare...\
+                    The following information is all directly from the incident response report published after the hacking.\
+                     The infiltrators are still at large\...", "div#infoTxt");
+            });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navli" href="index.html">C Y B E R - S E C U R I T Y</a>
+        <a class="navli" href="impact.html">I M P A C T</a>
+        <a class="navli" href="hack.html">H A C K I N G</a>
+        <a class="navli" href="breach.html">B R E A C H E S</a>
+        <a class="navli" href="protect.html">D E F E N C E</a>
+    </nav>
+    <main>
+        <video id="bgVid" autoplay muted loop>
+                <source src="videos/hackbg.mov" type="video/mp4" alt="background video is matrix-like code video">
+        </video>
+        <section id="anuInfo">
+            <a href="https://imagedepot.anu.edu.au/scapa/Website/SCAPA190209_Public_report_web_2.pdf"><img  src="images/anu.png"></a>
+            <div id="infoTxt">
+                    <p></p>
+            </div>
+        </section>
+        <section id="dArrow"><img id="arrowDown" src="images/arrowDown.png"></section>
+        <section id="flexContainer">
+            <section class="flexbox">
+                <section class="flexChild"><h3>Targetted Spear Phishing Campaign</h3>
+                    <img src="images/message.png">
+                </section>
+                <section class="flexChild"><h3>Creation of "Attack Station One"</h3>
+                        <img src="images/radio-station.png">
+                </section>
+                <section class="flexChild"><h3>University Network Map Copied</h3>
+                        <img src="images/network.png">
+                </section>
+                <section class="flexChild"><h3>Database Compromised</h3>
+                        <img src="images/database.png">
+                </section>
+            </section>
+            <section class="flexbox">
+                <section id="flexChildRight">
+                </section>
+            </section>
+        </section>
+    </main>    
+</body>
+</html>
